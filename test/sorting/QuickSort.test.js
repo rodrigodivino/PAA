@@ -1,5 +1,5 @@
 const {assert} = require('chai')
-const sut = require('../dist/sorting/QuickSort').default
+const sut = require('../../dist/sorting/QuickSort').default
 
 describe('QuickSort', function(){
     describe('Constructor', function(){
