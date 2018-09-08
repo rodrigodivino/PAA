@@ -4,10 +4,10 @@ export default abstract class BasicHeap {
     }
 
     left(index:number):number {
-        return 1
+        return 2*(index+1) - 1
     }
 
     right(index:number): number {
-        return 1
+        return 2*(index+1)
     }
 }

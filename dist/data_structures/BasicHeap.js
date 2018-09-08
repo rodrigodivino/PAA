@@ -5,10 +5,10 @@ class BasicHeap {
         return (Math.floor((index + 1) / 2)) - 1;
     }
     left(index) {
-        return 1;
+        return 2 * (index + 1) - 1;
     }
     right(index) {
-        return 1;
+        return 2 * (index + 1);
     }
 }
 exports.default = BasicHeap;
