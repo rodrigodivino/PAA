@@ -8,7 +8,8 @@
     "typescript": "^3.0.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha",
+    "watch": "./node_modules/typescript/bin/tsc -w"
   },
   "author": "",
   "license": "ISC"
