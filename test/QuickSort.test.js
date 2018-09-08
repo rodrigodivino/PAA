@@ -64,4 +64,15 @@ describe('QuickSort', function(){
 
         })
     })
+
+    describe('Behavior', function(){
+        it('Should not modify the passing array', function(){
+            const array = [1,5,2,3,7,5,1,2,6]
+            const arrayClone = array.slice()
+            const quicksort = new sut(array)
+            quicksort.sort()
+
+            assert.sameOrderedMembers(array,arrayClone)
+        })
+    })
 })
