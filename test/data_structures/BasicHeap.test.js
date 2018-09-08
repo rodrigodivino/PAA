@@ -1,5 +1,6 @@
 const BasicHeap = require("../../dist/data_structures/BasicHeap").default
 const {assert} = require('chai')
+
 class sut extends BasicHeap{
     constructor(array){
         super()

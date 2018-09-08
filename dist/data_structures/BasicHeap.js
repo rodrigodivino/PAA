@@ -10,5 +10,10 @@ class BasicHeap {
     right(index) {
         return 2 * (index + 1);
     }
+    swap(index1, index2) {
+        const aux = this.array[index1];
+        this.array[index1] = this.array[index2];
+        this.array[index2] = aux;
+    }
 }
 exports.default = BasicHeap;
