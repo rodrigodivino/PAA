@@ -1,10 +1,10 @@
 export default class QuickSort implements SortingAlgorithm {
     public array: number[]
     constructor(array: number[]){
-        this.array = array
+        this.array = array.slice()
     }
     sort(): number[] {
-        return []
+        return [];
     }
 
     protected partition(firstIndex: number, lastIndex:number): number{
@@ -24,5 +24,13 @@ export default class QuickSort implements SortingAlgorithm {
         const aux = this.array[index1]
         this.array[index1] = this.array[index2]
         this.array[index2] = aux 
+    }
+
+    protected quickSort(init:number ,end:number): void{
+        if(init<end){
+            const pivotIndex = this.partition(init,end)
+            this.quickSort(init,pivotIndex-1)
+            this.quickSort(pivotIndex+1,end)
+        }
     }
 }

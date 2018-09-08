@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class QuickSort {
     constructor(array) {
-        this.array = array;
+        this.array = array.slice();
     }
     sort() {
         return [];
@@ -23,6 +23,13 @@ class QuickSort {
         const aux = this.array[index1];
         this.array[index1] = this.array[index2];
         this.array[index2] = aux;
+    }
+    quickSort(init, end) {
+        if (init < end) {
+            const pivotIndex = this.partition(init, end);
+            this.quickSort(init, pivotIndex - 1);
+            this.quickSort(pivotIndex + 1, end);
+        }
     }
 }
 exports.default = QuickSort;
