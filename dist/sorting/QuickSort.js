@@ -5,7 +5,8 @@ class QuickSort {
         this.array = array.slice();
     }
     sort() {
-        return [];
+        this.quickSort(0, this.array.length - 1);
+        return this.array;
     }
     partition(firstIndex, lastIndex) {
         const x = this.array[lastIndex];

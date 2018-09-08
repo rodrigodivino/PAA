@@ -53,7 +53,7 @@ describe('QuickSort', function(){
         })
     })
 
-    /* describe('Sort', function(){
+    describe('Sort', function(){
         it('Should sort the array correctly', function(){
             const array = [1,5,2,3,8,1,3,2,6,4,2]
 
@@ -63,5 +63,5 @@ describe('QuickSort', function(){
             assert.sameOrderedMembers(quicksorted, sorted)
 
         })
-    }) */
+    })
 })

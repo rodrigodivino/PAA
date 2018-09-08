@@ -4,7 +4,8 @@ export default class QuickSort implements SortingAlgorithm {
         this.array = array.slice()
     }
     sort(): number[] {
-        return [];
+        this.quickSort(0,this.array.length-1)
+        return this.array
     }
 
     protected partition(firstIndex: number, lastIndex:number): number{
