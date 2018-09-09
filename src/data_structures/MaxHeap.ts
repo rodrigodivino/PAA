@@ -17,7 +17,8 @@ export default class MaxHeap extends BasicHeap implements Heap{
             if((max < this.length-1) && (this.array[max] < this.array[max+1])){
                 max++
             }
-            if(this.array[index] >= max){
+
+            if(this.array[index] >= this.array[max]){
                 index = this.length
             } else {
                 this.swap(index,max)
@@ -28,7 +29,9 @@ export default class MaxHeap extends BasicHeap implements Heap{
     }
 
     buildMaxHeap():void{
-
+        for(let i = Math.floor(this.length/2)-1; i>=0; i--){
+            this.peneira(i)
+        }
     }
 
 }

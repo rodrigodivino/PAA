@@ -5,6 +5,6 @@ interface Heap {
     left(index: number): number
     right(index: number): number
 
-    peneira(index: number, endHeap: number): void
-    buildMaxHeap(endHeap: number): void
+    peneira(index: number): void
+    buildMaxHeap(): void
 }
