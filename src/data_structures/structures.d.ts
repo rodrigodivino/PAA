@@ -1,6 +1,6 @@
 interface Heap {
     array: number[]
-    heapLength: number
+    length: number
     parent(index: number): number
     left(index: number): number
     right(index: number): number

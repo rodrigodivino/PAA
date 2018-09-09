@@ -1,20 +1,30 @@
 import BasicHeap from "./BasicHeap"
 export default class MaxHeap extends BasicHeap implements Heap{
     array: number[]
-    heapLength: number
-    constructor(array: number[]){
+    length: number
+    constructor(array: number[], length = array.length){
         super()
         this.array = array.slice()
-        this.heapLength = array.length
+        this.length = length
     }
     
 
-    decreaseHeapLength(): void{
-        this.heapLength--;
-    }
+    
 
     peneira(index:number): void{
-        //TODO: implementar de forma não-recursiva
+        while(this.left(index) < this.length){
+            let max = this.left(index)
+            if((max < this.length-1) && (this.array[max] < this.array[max+1])){
+                max++
+            }
+            if(this.array[index] >= max){
+                index = this.length
+            } else {
+                this.swap(index,max)
+                index = max
+            }
+        
+        }
     }
 
     buildMaxHeap():void{

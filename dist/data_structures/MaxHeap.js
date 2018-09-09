@@ -5,16 +5,25 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const BasicHeap_1 = __importDefault(require("./BasicHeap"));
 class MaxHeap extends BasicHeap_1.default {
-    constructor(array) {
+    constructor(array, length = array.length) {
         super();
         this.array = array.slice();
-        this.heapLength = array.length;
-    }
-    decreaseHeapLength() {
-        this.heapLength--;
+        this.length = length;
     }
     peneira(index) {
-        //TODO: implementar de forma não-recursiva
+        while (this.left(index) < this.length) {
+            let max = this.left(index);
+            if ((max < this.length - 1) && (this.array[max] < this.array[max + 1])) {
+                max++;
+            }
+            if (this.array[index] >= max) {
+                index = this.length;
+            }
+            else {
+                this.swap(index, max);
+                index = max;
+            }
+        }
     }
     buildMaxHeap() {
     }
