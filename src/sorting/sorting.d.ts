@@ -1,5 +1,6 @@
 interface SortingAlgorithm{
-    array: number[]
+    array?: number[]
+    heap?: Heap
 
     sort(): number[]
 }
